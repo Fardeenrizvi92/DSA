@@ -13,7 +13,46 @@
 // Input: nums = [2,2,1,1,1,2,2]
 // Output: 2
  
-//brute in copy
+//brute 
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int majorityElement(vector<int>& nums)
+{
+    int n = nums.size();
+
+    for (int i = 0; i < n; i++)
+    {
+        int count = 0;
+
+        // Count frequency of nums[i]
+        for (int j = 0; j < n; j++)
+        {
+            if (nums[j] == nums[i])
+            {
+                count++;
+            }
+        }
+
+        // Check if it is majority
+        if (count > n / 2)
+        {
+            return nums[i];
+        }
+    }
+
+    return -1;   // No majority element
+}
+
+int main()
+{
+    vector<int> nums = {2, 2, 1, 1, 1, 2, 2};
+
+    cout << "Majority Element = " << majorityElement(nums);
+
+    return 0;
+}
 
 //better
 class Solution {
