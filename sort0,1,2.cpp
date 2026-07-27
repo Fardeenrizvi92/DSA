@@ -16,7 +16,19 @@
 // Output: [0,1,2]
 
 
-//brute,better in copy
+//brute
+#include <bits/stdc++.h>
+using namespace std;
+
+class Solution {
+public:
+    void sortColors(vector<int>& nums) {
+        sort(nums.begin(), nums.end());
+    }
+};
+
+
+//better in copy
 //optimal is here
 
 class Solution {
