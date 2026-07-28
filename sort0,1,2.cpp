@@ -28,7 +28,40 @@ public:
 };
 
 
-//better in copy
+//better
+
+class Solution {
+public:
+    void sortColors(vector<int>& nums) {
+
+        map<int, int> freq;
+
+        // Count frequency of each number
+        for (int x : nums) {
+            freq[x]++;
+        }
+
+        int index = 0;
+
+        // Fill 0s
+        while (freq[0]--) {
+            nums[index++] = 0;
+        }
+
+        // Fill 1s
+        while (freq[1]--) {
+            nums[index++] = 1;
+        }
+
+        // Fill 2s
+        while (freq[2]--) {
+            nums[index++] = 2;
+        }
+    }
+};
+
+
+
 //optimal is here
 
 class Solution {
