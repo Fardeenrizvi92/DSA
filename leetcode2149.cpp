@@ -26,7 +26,34 @@
 // So nums is rearranged to [1,-1].
  
 
-//brute force in copy
+//brute force 
+
+class Solution {
+public:
+    vector<int> rearrangeArray(vector<int>& nums) {
+
+        vector<int> positive;
+        vector<int> negative;
+
+        // Store positives and negatives separately
+        for (int i = 0; i < nums.size(); i++) {
+            if (nums[i] > 0)
+                positive.push_back(nums[i]);
+            else
+                negative.push_back(nums[i]);
+        }
+
+        vector<int> ans;
+
+        // Alternate positive and negative
+        for (int i = 0; i < positive.size(); i++) {
+            ans.push_back(positive[i]);
+            ans.push_back(negative[i]);
+        }
+
+        return ans;
+    }
+};
 
 
 //optimal
