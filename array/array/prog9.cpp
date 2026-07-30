@@ -13,6 +13,35 @@
 // Output: [1, 2]
 // Explanation: Distinct elements including both the arrays are: 1 2.
 
+//brute force
+class Solution {
+public:
+    vector<int> findUnion(vector<int>& a, vector<int>& b) {
+
+        set<int> st;
+
+        // Insert all elements of first array
+        for (int i = 0; i < a.size(); i++) {
+            st.insert(a[i]);
+        }
+
+        // Insert all elements of second array
+        for (int i = 0; i < b.size(); i++) {
+            st.insert(b[i]);
+        }
+
+        vector<int> ans;
+
+        // Copy elements from set to vector
+        for (auto it : st) {
+            ans.push_back(it);
+        }
+
+        return ans;
+    }
+};
+
+//optimal
 
 class Solution {
   public:
